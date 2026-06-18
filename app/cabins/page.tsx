@@ -13,7 +13,7 @@ export default async function Cabins() {
     data = await res.json();
     console.log(data);
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 
   return (
