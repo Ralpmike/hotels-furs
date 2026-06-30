@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 
-const inter = Inter({
-  variable: "--font-inter",
+const josefin = Josefin_Sans({
+  variable: "--font-josefin-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Hotels for you",
-  description: "Find your next hotel with ease",
+  // title: "Hotels for you",
+  // description: "Find your next hotel with ease",
+  title: {
+    template: "%s | Hotels For You",
+    default: "Welcome To Hotels For You",
+  },
+  description: "Find your next hotel with ease with Hotels For You",
 };
+
+console.log(josefin)
 
 export default function RootLayout({
   children,
@@ -20,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${josefin.className} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <Navigation />
         <main className="mx-auto grow">

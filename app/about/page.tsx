@@ -1,3 +1,8 @@
+export const metadata = {
+    title: "About",
+    description: "About page",
+}
+
 export default function page() {
     return (
         <div className="h-screen flex justify-center items-center">

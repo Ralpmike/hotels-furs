@@ -5,6 +5,11 @@ interface Cabin {
   body: string;
 }
 
+export const metadata = {
+  title: "Cabins",
+  description: "Cabins page",
+}
+
 export default async function Cabins() {
   let data: Cabin[] = [];
 
