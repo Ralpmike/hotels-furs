@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Image src="/logo.png" alt="Logo" width={60} height={60} className="rounded-md" />
-      <span className="text-primary-700 font-bold text-2xl">Hotels For You</span>
+      <span className="font-bold text-2xl hover:text-accent-400  text-primary-100">Hotels For You</span>
     </Link>
   );
 }

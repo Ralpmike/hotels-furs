@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
-import Navigation from "./components/Navigation";
+import Navigation from "./components/common/Navigation";
 
 const josefin = Josefin_Sans({
-  variable: "--font-josefin-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
-})
+});
 
 export const metadata: Metadata = {
   // title: "Hotels for you",
@@ -20,7 +19,7 @@ export const metadata: Metadata = {
   description: "Find your next hotel with ease with Hotels For You",
 };
 
-console.log(josefin)
+console.log(josefin);
 
 export default function RootLayout({
   children,
@@ -29,16 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${josefin.className} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col bg-primary-950 text-primary-100 ">
         <Navigation />
-        <main className="mx-auto grow">
-          {children}
-        </main>
-        <footer>
-          <div className="container mx-auto">
-            <p className="text-center text-muted-foreground">HotelsForYou &copy; 2026</p>
-          </div>
-        </footer>
+        <div className="flex-1 px-8 py-12">
+          <main className="container mx-auto bg-red-300">{children}</main>
+        </div>
       </body>
     </html>
   );
