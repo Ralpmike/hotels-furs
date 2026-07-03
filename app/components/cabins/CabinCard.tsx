@@ -1,8 +1,13 @@
 import { UsersIcon } from "@heroicons/react/24/solid";
+import { ICabinType } from "./CabinPage";
 
-function CabinCard({ cabin }) {
+type CabinCardProps = {
+  cabin: ICabinType | null;
+}
+
+function CabinCard({ cabin }: CabinCardProps) {
+  if (!cabin) return null;
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
-
   return (
     <div className="flex border-primary-800 border">
       <img

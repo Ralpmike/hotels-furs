@@ -1,4 +1,9 @@
-export default function Page() {
+import Image from "next/image";
+import Link from "next/link";
+import about1 from "@/public/about-1.jpg";
+import about2 from "@/public/about-2.jpg";
+
+export default function AboutPage() {
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
@@ -29,15 +34,21 @@ export default function Page() {
       </div>
 
       <div className="col-span-2">
-        <img
-          src="/about-1.jpg"
+        <Image
+          src={about1}
           alt="Family sitting around a fire pit in front of cabin"
+          placeholder="blur"
         />
       </div>
 
-      <div className="col-span-2">
-        <img src="/about-2.jpg" alt="Family that manages The Wild Oasis" />
-      </div>
+      <div className="col-span-2 relative aspect-square">
+        <Image
+          fill
+          src="/about-2.jpg"
+          className="object-cover"
+          alt="Family that manages The Wild Oasis"
+        />
+      </div> 
 
       <div className="col-span-3">
         <h1 className="text-4xl mb-10 text-accent-400 font-medium">
@@ -61,12 +72,12 @@ export default function Page() {
           </p>
 
           <div>
-            <a
+            <Link
               href="/cabins"
               className="inline-block mt-4 bg-accent-500 px-8 py-5 text-primary-800 text-lg font-semibold hover:bg-accent-600 transition-all"
             >
               Explore our luxury cabins
-            </a>
+            </Link>
           </div>
         </div>
       </div>

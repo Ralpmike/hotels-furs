@@ -27,11 +27,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${josefin.className} h-full antialiased`}>
-      <body className="min-h-screen flex flex-col bg-primary-950 text-primary-100 ">
+    <html lang="en" className={`${josefin.className} h-full antialiased `}>
+      <body className="min-h-screen flex flex-col bg-primary-950 text-primary-100 relative">
         <Navigation />
         <div className="flex-1 px-8 py-12">
-          <main className="container mx-auto bg-red-300">{children}</main>
+          <main className="container mx-auto">{children}</main>
         </div>
       </body>
     </html>
