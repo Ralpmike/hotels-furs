@@ -9,9 +9,9 @@ type SelectCountryType = {
 }
 
 async function SelectCountry({ defaultCountry, name, id, className }:SelectCountryType) {
-  const countries = await getCountries() || [];
-  const flag =
-    (countries || []).find((country:any) => country.name === defaultCountry)?.flag ?? '';
+  const fetchedCountries = await getCountries();
+  const countries = Array.isArray(fetchedCountries) ? fetchedCountries : [];
+  const flag = countries.find((country: any) => country.name === defaultCountry)?.flag ?? '';
 
   return (
     <select
