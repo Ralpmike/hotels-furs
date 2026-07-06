@@ -30,8 +30,8 @@ export default function RootLayout({
     <html lang="en" className={`${josefin.className} h-full antialiased `}>
       <body className="min-h-screen flex flex-col bg-primary-950 text-primary-100 relative">
         <Navigation />
-        <div className="flex-1 px-8 py-12">
-          <main className="container mx-auto">{children}</main>
+        <div className="flex-1 px-8 py-12 grid">
+          <main className="container mx-auto w-full">{children}</main>
         </div>
       </body>
     </html>
