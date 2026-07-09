@@ -10,14 +10,14 @@ function CabinCard({ cabin }: CabinCardProps) {
   if (!cabin) return null;
   const { id, name, maxCapacity, regularPrice, discount, image } = cabin;
   return (
-    <div className="flex border-primary-800 border">
+    <div className="flex flex-col sm:flex-row border-primary-800 border">
       <div className="relative flex-1">
         <Image
           src={image}
           fill
           alt={`Cabin ${name}`}
           sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="flex-1 border-r border-primary-800"
+          className="flex-1 border-r border-primary-800 object-cover"
         /> 
       </div>
       <div className="grow">

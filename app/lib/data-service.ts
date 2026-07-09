@@ -15,7 +15,6 @@ export async function getCabin(id: number | string) {
   // await new Promise((res) => setTimeout(res, 1000));
 
   if (error) {
-    console.error(error);
     throw new Error('cabin could not be found')
   }
 
