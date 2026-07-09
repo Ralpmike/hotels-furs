@@ -16,6 +16,7 @@ export async function getCabin(id: number | string) {
 
   if (error) {
     console.error(error);
+    throw new Error('cabin could not be found')
   }
 
   return data;
@@ -30,6 +31,7 @@ export async function getCabinPrice(id: number | string) {
 
   if (error) {
     console.error(error);
+    throw new Error('cabin price could not be loaded')
   }
 
   return data;

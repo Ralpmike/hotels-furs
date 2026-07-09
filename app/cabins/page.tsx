@@ -5,6 +5,7 @@ export const metadata = {
   description: "Cabins page",
 };
 
-export default async function page() {
+export default function page() {
+  
   return <CabinPage />;
 }

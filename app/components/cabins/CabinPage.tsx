@@ -1,6 +1,6 @@
-
-import { ICabin } from "@/app/models/cabin";
-import CabinCard from "./CabinCard";
+import { Suspense } from "react";
+import CabinLists from "./CabinLists";
+import Spinner from "@/app/components/common/Spinner";
 
 export type ICabinType = {
   id: number;
@@ -9,12 +9,9 @@ export type ICabinType = {
   regularPrice: number;
   discount: number;
   image: string;
-}
+};
 
 export default function CabinPage() {
-  // CHANGE
-  const cabins: ICabin[] = [];
-
   return (
     <div>
       <h1 className="text-4xl mb-5 text-accent-400 font-medium">
@@ -29,21 +26,12 @@ export default function CabinPage() {
         to paradise.
       </p>
 
-      {cabins.length > 0 && (
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 xl:gap-14">
-          {cabins.map((cabin) => (
-            <CabinCard cabin={cabin.cabin || null} key={cabin.cabin?.id} />
-          ))}
-        </div>
-      )}
+      <Suspense fallback={<Spinner />}>
+        <CabinLists />
+      </Suspense>
     </div>
   );
 }
-
-
-
-
-
 
 // import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
 
