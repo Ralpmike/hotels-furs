@@ -8,7 +8,6 @@ export default async function CabinPage({
   params: Promise<{ cabinId: string }>;
 }) {
   const { cabinId } = await params;
-  console.log(params);
   const cabin = await getCabin(cabinId);
   const { id, name, maxCapacity, regularPrice, discount, image, description } =
     cabin;
@@ -21,6 +20,7 @@ export default async function CabinPage({
             fill
             className="object-cover"
             src={image}
+            sizes="(max-width: 1024px) 100vw, (max-width: 1200px) 50vw, 33vw"
             alt={`Cabin ${name}`}
           />
         </div>
